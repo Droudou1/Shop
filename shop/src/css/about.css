@@ -1,0 +1,39 @@
+
+.about-content{
+  padding: 40px 0px;
+  font-family:Arial, Helvetica, sans-serif;  
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content:space-between;
+  letter-spacing:2px;
+  background-color:rgb(228, 226, 226);
+}
+.about-txt{
+  line-height:32px;
+  font-size:19px;
+  width:800px;
+}
+.about-txt-gapped{
+  line-height:32px;
+  width:800px;
+  font-size:19px;
+  margin-bottom: 30px;
+}
+.bar{
+  top:120px;
+  padding-bottom: 1750px;
+  position:absolute;
+  width:300px;
+  height:30px;
+  background-color:#22242e ;
+}
+.bar-left{
+  left: 20px;
+}
+.bar-right{
+  right:20px;
+}
+.title{
+  font-size:35px;
+}

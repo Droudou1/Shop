@@ -1,0 +1,70 @@
+.fav-title{
+  margin-top: 8px;
+  text-align:center;
+  font-size:40px;
+  letter-spacing:2px;
+  color:#e74c3c;
+}
+.favproducts-list{
+  margin-top: 50px;
+  margin-left: 20px;
+  display: grid;
+  width: 650px;
+  height:100%;
+  grid-template-columns: repeat(3,minmax(550px,1fr));
+  column-gap:20px;
+  row-gap:30px ;
+}
+.favproduct-container{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  column-gap: 20px;
+}
+.favproduct-container h1{
+  margin-top: 0;
+  letter-spacing:0.5px;
+  font-size:24px;
+}
+.fav-img-container{
+  cursor:pointer;
+  border:solid;
+  border-width:0.5px;
+  border-radius:3px;
+  width: 100%;
+  height: 100%;
+  transition:0.1s;
+}
+.fav-img-container:hover{
+  opacity: 0.7;  
+}
+.fav-img{
+  height: 100%;
+  width: 100%;
+}
+.fav-text-container{
+  padding: 8px;
+  box-shadow: 0px 1px 1px rgba(0,0,0,0.30);
+}
+.red-stock{
+  color:red;
+  font-size:19px;
+}
+.fav-remove-btn{
+  cursor: pointer;
+  padding: 10px;
+  border-radius:10px;
+  border:none;
+  font-size:15px;
+
+  background-color: transparent;
+  border: 2px solid #e74c3c;
+  color: #e74c3c;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.fav-remove-btn:hover{
+  background-color: #e74c3c;
+  color: #ffffff;
+}

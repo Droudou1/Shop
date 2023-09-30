@@ -1,0 +1,128 @@
+.single-product-name{
+  font-size:40px;
+  letter-spacing: 2px;
+}
+.single-product-img-container{
+  width: 600px;
+  height: 900px;
+}
+.single-product-page-flex{
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 1px;
+  display: flex;
+  margin-left: 100px;
+  margin-top: 20px;
+}
+.single-product-images-container{
+  margin-right: 150px;
+  display: grid;
+  grid-template-rows:600px 1fr;
+  gap: 10px;
+}
+.add-fav{
+  font-size:14px;
+  letter-spacing:2px;
+}
+.fav-ico{
+  margin-right: 5px;
+  font-size:16px;
+  cursor:pointer;
+}
+.filled{
+  color:red;
+}
+.single-product-txt-container{
+  display: flex;
+  flex-direction:column;
+}
+.description-list li{
+  margin-bottom: 5px;
+}
+.description-list li::marker{
+  font-size:27px;
+  color:rgb(209, 205, 205);
+}
+.size-btn{
+  font-family: 'Oswald', sans-serif;
+  font-size:15px;
+  letter-spacing: 1px;
+  cursor:pointer;
+  padding: 10px 20px;
+  border-color:rgb(194, 194, 194);
+  border-width:1px;
+  border-radius:8px;
+  margin-right: 15px;
+  transition:0.1s;
+}
+.size-btn:hover{
+  opacity:0.6;
+}
+.selected{
+  border-width:2px;
+  border-color:rgb(56, 56, 167);
+}
+.single-product-img{
+  max-width:90%;
+  min-width:80%;
+  min-height: 65%;
+  max-height:70%;
+}
+.img-selectors{
+  display: flex;
+  margin-left: 45px;
+}
+.img-selector{
+  border-style:solid;
+  border-width:1px;
+  border-color:rgb(187, 186, 186);
+  margin-right: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:150px;
+}
+.img-selector:hover{
+  opacity:0.5;
+}
+.single-product-img-selector{
+  height:100%;
+  width: 100%;
+}
+.color-selected{
+  border-color:blue;
+}
+.btn{
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 1px;
+  padding: 10px;
+  cursor: pointer;
+  background-image: linear-gradient(to right, #1d4f6e, #2d7fb3);
+  color :white;
+  border-radius:8px;
+  border:none;
+  margin-top: 10px;
+  margin-right: 15px;
+  transition:0.1s;
+}
+.btn:hover{
+  opacity:0.7;
+}
+.buy{
+  padding: 10px 17px;
+}
+.add{
+  padding: 9px 19px;
+  background-color:white;
+  background-image:none;
+  box-shadow:0px 2px 2px rgba(0,0,0,0.30);
+  color:black
+}
+.price{
+  font-weight:bold;
+  font-size:18px;
+  margin-top: 35px;
+}
+.single-product-stock{
+  margin: 0;
+}
