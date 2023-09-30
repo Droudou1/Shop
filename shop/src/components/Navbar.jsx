@@ -53,7 +53,6 @@ function Navbar(props){
             <button onClick={props.handleadmin}>Log Out</button>
           </NavLink>
           </>}
-         <p>Just testing Github for the First time</p>
         </div>
       </div>
     </nav>
