@@ -21,7 +21,7 @@ body{
 }
 .categories-container{
   display:grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5,1fr);
   padding: 20px;
   justify-content: space-between;
   margin-bottom: 400px;
@@ -182,4 +182,25 @@ body{
   top: 50%;
   left: 50%;
   transform:translate(-50%,-50%);
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .categories-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .categ-container {
+    height: 40vh;
+  }
+
+  .categ-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  body {
+    margin-right: 0;
+    overflow-x:hidden;
+  }
 }
