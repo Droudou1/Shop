@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import '../css/product-page.css';
 import { useState,useEffect } from "react";
-import {Link} from "react-router-dom";
 export default function ProductPage({productsarray,handleAddToCart,favproducts,handlefavproducts}){
   const {id} = useParams();
   const [isfav,setisfav] = useState(false);
@@ -94,7 +93,7 @@ export default function ProductPage({productsarray,handleAddToCart,favproducts,h
               <h3>Availble Sizes:</h3>
               <div className='sizes-flex'>              
                 {product.sizes.map((size) => {
-                  return size !== "Choose size" ? <button className={currentsize === size ? 'size-btn selected' : 'size-btn'} onClick={() => {setcurrentsize(size)}} key={`${size}-${product.id}`}>{size}</button>: <></>
+                  return size !== "Choose size" && <button className={currentsize === size ? 'size-btn selected' : 'size-btn'} onClick={() => {setcurrentsize(size)}} key={`${size}-${product.id}`}>{size}</button>
                 })}
               </div>            
             </div>}
