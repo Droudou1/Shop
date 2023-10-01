@@ -100,7 +100,6 @@ export default function ProductPage({productsarray,handleAddToCart,favproducts,h
             </div>}
             <span className='price'>{`$${(product.priceinCents / 100).toFixed(2)}`}</span>
             <div className='btn-container'>
-              <button className='buy btn'>Buy Now</button>
                 <button className='add btn'
                 onClick={() => {handleAddToCart(product.id,1,currentcolor,currentsize,() => console.log('hi'),() => console.log('hi'),product)}}
               

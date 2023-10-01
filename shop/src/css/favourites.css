@@ -91,5 +91,6 @@
   flex-direction: column;
 }
 .empty-list-container p {
+  letter-spacing:2px;
   font-size:18px;
 }

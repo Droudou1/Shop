@@ -9,7 +9,10 @@ function Navbar(props){
             <input onChange={props.handlesearchtxtchange} type="text" placeholder="search"></input>
             <i className="fa-solid fa-magnifying-glass search-icon"></i>
           </div>
-          <button className='orders-btn'>My Orders</button>
+          <NavLink to='/orders'>
+            <button className='orders-btn'>My Orders</button> 
+          </NavLink>
+   
           <NavLink to='/favourites'>
             <button className='orders-btn fav' >Favourites</button>
           </NavLink>

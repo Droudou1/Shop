@@ -15,6 +15,7 @@ import NotFound from "./components/NotFound";
 import ProductPage from "./components/product-page";
 import Admin from "./components/Admin-page";
 import Favourite from "./components/Favourites-page";
+import Orders from "./components/Orders-page";
 
 /*EVERYTHING MUST BE SPELLED RIGHT AND NAMES AND TITLES SHOULD BE SAME AROUND FILES*/
 
@@ -38,6 +39,7 @@ function App(){
   const [currentfilter,setcurrentfilter] = useState('all');
   const [searchterm,setsearchterm] = useState('');
   const [favproducts,setfavproducts] =useState(savedfavproducts !== null ? savedfavproducts : []);
+  const [orders,setorders] = useState([]);
 
 
   useEffect(() => {
@@ -175,6 +177,7 @@ function App(){
          favproducts={favproducts} handlefavproducts={handlefavproducts}/>} />
         <Route path='/favourites' element={<Favourite favproducts={favproducts} DeleteFavItem={DeleteFavItem} />}></Route>
         <Route path="/admin" element={<Admin />} />
+        <Route path='/orders' element={<Orders />}></Route>
         <Route path='*' element={<NotFound />} />
       </Routes>
 
