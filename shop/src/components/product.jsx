@@ -79,7 +79,7 @@ export default function Product({product,handleAddToCart}){
           <span className="stock">{product.stock !== 0 ? `${product.stock} In Stock` : `Out Of Stock`}</span>
           {isloading &&  <i className="fa-solid fa-spinner fa-spin spinner"></i>}
         
-          <img onLoad={handleloading} className={isloading ? 'product-img' : 'product-img img-loaded'} src={`/productimgs/${handleimg()}${handleimg() !== '' ? '-' : ''}${product.image}`}></img>
+          <img loading="lazy" onLoad={handleloading} className={isloading ? 'product-img' : 'product-img img-loaded'} src={`/productimgs/${handleimg()}${handleimg() !== '' ? '-' : ''}${product.image}`}></img>
 
         </div>
       </Link>

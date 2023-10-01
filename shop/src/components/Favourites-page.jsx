@@ -5,6 +5,13 @@ export default function Favourite({favproducts,DeleteFavItem}){
 
   return(
     <div className='fav-page'>
+      {favproducts.length === 0 ? <div className='empty-list-container'>
+        <h1>You Don't Have Any Favourite products yet</h1>
+        <p>You Might Want To Try Our Products!!</p>
+        <Link to='/products'>
+          <button className='explore-btn'>SHOP NOW</button>
+        </Link>
+      </div> : <>
       <h1 className='fav-title'>Favourite Products</h1>
       <div className='favproducts-list'>
         {favproducts.map((favproduct) => {
@@ -27,6 +34,8 @@ export default function Favourite({favproducts,DeleteFavItem}){
           );
         })}
       </div>
+      </>}
+     
     </div>
   );
 }
