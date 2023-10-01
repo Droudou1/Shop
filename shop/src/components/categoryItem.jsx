@@ -30,7 +30,7 @@ export default function CategoryItem(props) {
       <img className="categ-img" src={`/categoriesimgs/${props.item.img}`}></img>
       <div className="info">
         <h1 className="categ-title">{props.item.title}</h1>
-        <Link to="/products">
+        <Link onClick={() => {window.scrollTo(0,0);}} to="/products">
           <button onClick={() => {props.handleFilter(getarg())}}>SHOP NOW</button>
         </Link>
         

@@ -16,6 +16,7 @@ import ProductPage from "./components/product-page";
 import Admin from "./components/Admin-page";
 import Favourite from "./components/Favourites-page";
 import Orders from "./components/Orders-page";
+import TermsPage from "./components/Terms-page";
 
 /*EVERYTHING MUST BE SPELLED RIGHT AND NAMES AND TITLES SHOULD BE SAME AROUND FILES*/
 
@@ -146,6 +147,7 @@ function App(){
         
       updateCart(updatedCart);
       navigate('/cart');
+      window.scrollTo(0,0);
     }else if((color === 'not selected' || size === 'not selected') && product.stock !== 0){
       handleerrortxt();
     }else if(product.stock === 0) {
@@ -178,6 +180,7 @@ function App(){
         <Route path='/favourites' element={<Favourite favproducts={favproducts} DeleteFavItem={DeleteFavItem} />}></Route>
         <Route path="/admin" element={<Admin />} />
         <Route path='/orders' element={<Orders />}></Route>
+        <Route path="/terms" element={<TermsPage />}></Route>
         <Route path='*' element={<NotFound />} />
       </Routes>
 

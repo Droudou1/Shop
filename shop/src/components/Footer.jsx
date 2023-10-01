@@ -23,18 +23,14 @@ export default function Footer (){
       <div className='footer-center'>
         <h2>Useful Links</h2>
         <ul>
-          <Link to='/'><li className='footer-link'>Home</li></Link>
-          <Link to='/cart'> <li className='footer-link'>Cart</li></Link>
-          <Link to="/products"><li className='footer-link'>Products</li></Link>    
-          <li className='footer-link'>My Account</li>
-          <li className='footer-link'>Order Tracking</li>
-          <Link to="about">
+          <Link onClick={() => {window.scrollTo(0,0);}} to='/'><li className='footer-link'>Home</li></Link>
+          <Link to='/cart' onClick={() => {window.scrollTo(0,0);}}> <li className='footer-link'>Cart</li></Link>
+          <Link to="/products" onClick={() => {window.scrollTo(0,0);}}><li className='footer-link'>Products</li></Link>    
+          <Link to='/orders' onClick={() => {window.scrollTo(0,0);}}><li className='footer-link'>Order Tracking</li></Link>
+          <Link to="about" onClick={() => {window.scrollTo(0,0);}}>
             <li className='footer-link'>About</li>
           </Link>
-          <li className='footer-link'>Terms</li>
-          <Link to='signin'>
-            <li className='footer-link'>Sign In</li>
-          </Link>
+          <Link to='/terms' onClick={() => {window.scrollTo(0,0);}}><li className='footer-link'>Terms</li></Link>
          
         </ul>
       </div>
