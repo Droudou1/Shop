@@ -1,9 +1,11 @@
 import { useParams } from "react-router-dom";
 import '../css/product-page.css';
 import { useState,useEffect } from "react";
+import {Link} from 'react-router-dom';
 export default function ProductPage({productsarray,handleAddToCart,favproducts,handlefavproducts}){
   const {id} = useParams();
   const [isfav,setisfav] = useState(false);
+  const [isloading,setisloading] = useState(true);
 
 
   
@@ -58,11 +60,17 @@ export default function ProductPage({productsarray,handleAddToCart,favproducts,h
 
   return(
     <div className='single-product-page'>
+      <Link to='/products'>
+        <i className="fa-solid fa-arrow-left-long arrow-back"></i>
+      </Link>
       
       <div className='single-product-page-flex'>
         <div className='single-product-images-container'>
           <div className='single-product-img-container'>
-            <img className='single-product-img' src={`/productimgs/${handleimg()}${handleimg() !== '' ? '-' : ''}${product.image}`}></img>
+            {isloading &&  <i className="fa-solid fa-spinner fa-spin product-spinner"></i>}
+            <img onLoad={() => {setisloading(false)}}
+            className={isloading ? 'single-product-img' : 'single-product-img product-img-loaded'}
+            src={`/productimgs/${handleimg()}${handleimg() !== '' ? '-' : ''}${product.image}`}></img>
           </div>
           <div className='img-selectors'>
             {product.colors !== undefined && product.colors.map((color) => {

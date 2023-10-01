@@ -4,6 +4,7 @@ import { sliderItems } from '../data/slidesdata';
 import {Link} from "react-router-dom";
 
 export default function Slider(){
+  const [isloading,setisloading] = useState(true);
   const [slideIndex,setSlideIndex] = useState(0);
   function handleClick(direction){
     if(direction === "right"){
@@ -38,7 +39,11 @@ export default function Slider(){
           return(
             <div style={style} key={slider.id} className="slide">
               <div className="img-container">
-                <img className="img" src={slider.img}></img>
+                {isloading &&  <i className="fa-solid fa-spinner fa-spin slider-spinner"></i>}
+                <img 
+                onLoad={() => {setisloading(false)}}
+                className={isloading ? 'img' : 'img slider-img-loaded'}
+                src={slider.img}></img>
               </div>
               <div className='info-container'>
                 <h1>{slider.title}</h1>

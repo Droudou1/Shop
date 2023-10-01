@@ -4,7 +4,7 @@
   margin-top:10px;
   display:grid;
   grid-template-columns: repeat(auto-fit,minmax(359px,359px)) ;
-  grid-template-rows: repeat(auto-fit,minmax(620px,620px));
+  grid-template-rows: repeat(auto-fit,minmax(400px,620px));
   gap:20px;
 }
 .product-container{

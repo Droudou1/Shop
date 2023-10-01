@@ -10,6 +10,7 @@ export default function CartItem({item,product,handledelete,editQuantity,editval
     color: item.color !== 'unavailble' ? item.color : '',
     size: item.size !== 'unavailble' ? item.size : ''
   });
+  const [isloading,setisloading] = useState(true);
 
   useEffect(() => {
     function handleEscape(e){
@@ -55,7 +56,13 @@ export default function CartItem({item,product,handledelete,editQuantity,editval
   return(
     <div className="cart-item-container">
       <div className="cart-item-img-container">
-        <img className="cart-item-img" src={`/productimgs/${handleimgs()}${handleimgs() !== '' ? '-' : ''}${product.image}`}></img>
+      {isloading &&  <i className="fa-solid fa-spinner fa-spin item-spinner"></i>}
+        <img 
+        onLoad={() => {setisloading(false)}} 
+        className={isloading ? 'cart-item-img' : 'cart-item-img item-img-loaded'}
+        src={`/productimgs/${handleimgs()}${handleimgs() !== '' ? '-' : ''}${product.image}`}>
+
+        </img>
       </div>
       <div className="cart-item-info-container">
         <div className="cart-item-txt-info-container">
