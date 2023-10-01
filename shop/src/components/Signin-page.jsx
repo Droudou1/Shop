@@ -203,7 +203,7 @@ export default function Signin({handlepage}) {
         </div>
         <label className="agree-label">
           <input onChange={handleinputs} name="checked" checked={userinformation.checked} className="checkbox" type="checkbox"></input>
-          <p className="agreement">I agree to the terms and conditions.</p>
+          <p className="agreement">I agree to the <Link className='t-lnk' to='/terms'>terms and conditions.</Link></p>
         </label>
         <button onClick={handleconfirm} className="confirm-btn">Confirm</button>
         {error()}

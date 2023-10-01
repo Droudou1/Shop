@@ -189,7 +189,7 @@
     grid-template-columns:repeat(2,130px);
   }
   .filter-container{
-    margin-left: 20px;
+    margin-left: 50px;
   }
   .filter-btn{
     display: flex;

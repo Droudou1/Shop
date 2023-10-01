@@ -53,13 +53,15 @@ h2{
   .about-txt-gapped {
     font-size: 19px;
   }
-
-  .bar {
-    display: block; /* Show the bars on larger screens */
-  }
   .about-txt,
   .about-txt-gapped,
   h2{
     margin-left: 0;
+  }
+}
+
+@media screen and (min-width: 1480px){
+  .bar{
+    display:block;
   }
 }
