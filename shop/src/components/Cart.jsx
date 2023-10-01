@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import {Link} from 'react-router-dom';
 
 
-export default function Cart({cart,handlepage,productsarray,cartquantity,updateCart}){
+export default function Cart({cart,productsarray,cartquantity,updateCart}){
   const [isreseting,setisreseting] = useState(false);
   const [showmore,setshowmore] = useState(false);
   const [shippement,setshippement] = useState('free');
@@ -260,6 +260,10 @@ export default function Cart({cart,handlepage,productsarray,cartquantity,updateC
       return 'cart-content'
     };
   }
+
+
+
+  const discount = subtotal() + taxes >= 100 ? ((subtotal() + taxes) * 10) / 100 : 0 
   return(
     <div className="Cart-page">
       {isreseting && <div className='popup-container'>
@@ -300,31 +304,36 @@ export default function Cart({cart,handlepage,productsarray,cartquantity,updateC
         </Link>       
         <div className="checkout-container">
           <div className="total-infos">
-            <div className='cont subtotal-container'>
+            <div className='cont'>
               <span className="label">Subtotal:</span>
               <span>${subtotal().toFixed(2)}</span>
             </div>
-            <div className='cont total-quantity-container'>
+            <div className='cont'>
               <span className="label">Quantity: </span>
               <span>{cartquantity} item{cartquantity > 1 ? 's' : ''}</span>
             </div>
-            <div className='cont delivery-container'>
+            <div className='cont'>
               <span className="label">Delivery: </span>
               <span>{delivery === 'free' ? 'free' : `$${delivery}`}</span>
             </div>
-            <div className='cont taxes-container'>
+            <div className='cont'>
               <span className="label">Taxes: </span>
               <span>${taxes}</span>
             </div>
-            <div className='cont total-container'>
+              <div className='cont'>
+                <span className="label">Discount:</span>
+                <span>${discount.toFixed(2)}</span>
+              </div>       
+            <div className='cont'>
               <span className="label">Total:</span>
-              <span>${delivery === 'free' ? (subtotal() + taxes).toFixed(2) : (subtotal() + delivery + taxes).toFixed(2)}</span>
+              <span>${delivery === 'free' ? ((subtotal() + taxes)-discount).toFixed(2) : ((subtotal() + delivery + taxes)-discount).toFixed(2)}</span>
             </div>
           </div>
           <label><input checked={shippement === 'free'} onChange={handleradiochange} type="radio" name="shippingoptions" value='free'></input>Free Shipping</label>
           <label><input checked={shippement === 'standard'} onChange={handleradiochange}  type="radio" name="shippingoptions" value='standard'></input>$4.99</label>
           <label><input checked={shippement === 'fast'} onChange={handleradiochange}  type="radio" name="shippingoptions" value='fast'></input>$6.99</label>
           <p className="shippement-info-txt">{shippementtext()}</p>
+          <p className='coupon-reminder'>Have a coupon code? Enter it at checkout for additional savings!</p>
           <button onClick={() => {setcheckout(true)}} className="move-to-checkout-btn">MOVE TO CHECKOUT</button>
         </div>
 
@@ -374,7 +383,7 @@ export default function Cart({cart,handlepage,productsarray,cartquantity,updateC
             <input onChange={handleonChange}  value='discover' checked={checkoutinfo.payement === 'discover'} name="payement"  type="radio"></input></label>
         </div>
         <div className="order-summary">
-          <p>You're Purchasing <b>{cartquantity}</b> item{cartquantity > 1 ? 's' : ''} for a total price of <b>${delivery === 'free' ? (subtotal() + taxes).toFixed(2) : (subtotal() + delivery + taxes).toFixed(2)}</b></p>
+          <p>You're Purchasing <b>{cartquantity}</b> item{cartquantity > 1 ? 's' : ''} for a total price of <b>${delivery === 'free' ? ((subtotal() + taxes)-discount).toFixed(2) : ((subtotal() + delivery + taxes)-discount).toFixed(2)}</b></p>
           <h2>Items:</h2>
           <div className="names-container">
             <div className="items-name-container">({itemsfunc()}{showmore ? '' : cart.length > 2 && '....'})</div>
@@ -384,6 +393,7 @@ export default function Cart({cart,handlepage,productsarray,cartquantity,updateC
             
           </div>
         </div>
+        <button className="coupon-btn">Apply Coupon</button>
         <button className="place-order-btn">Place Order</button>
       </div> }
      
