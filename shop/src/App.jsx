@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 import Signin from "./components/Signin-page";
 import Login from "./components/login";
 import { products, productstoys, productsclothes, productselectronics, productsmiscellaneous,productsfurn } from "./data/productsdata";
-import {Routes,Route} from "react-router-dom";
+import {Routes,Route,useNavigate} from "react-router-dom";
 import NotFound from "./components/NotFound";
 import ProductPage from "./components/product-page";
 import Admin from "./components/Admin-page";
@@ -113,6 +113,7 @@ function App(){
     
   };
 
+  const navigate = useNavigate();
 
   function updateCart(newCart){
     setCart(newCart);
@@ -142,6 +143,7 @@ function App(){
       }
         
       updateCart(updatedCart);
+      navigate('/cart');
     }else if((color === 'not selected' || size === 'not selected') && product.stock !== 0){
       handleerrortxt();
     }else if(product.stock === 0) {

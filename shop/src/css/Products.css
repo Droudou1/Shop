@@ -3,8 +3,8 @@
   margin-left:25px;
   margin-top:10px;
   display:grid;
-  grid-template-columns: repeat(auto-fit,359px) ;
-  grid-template-rows: repeat(5,620px);
+  grid-template-columns: repeat(auto-fit,minmax(359px,359px)) ;
+  grid-template-rows: repeat(auto-fit,minmax(620px,620px));
   gap:20px;
 }
 .product-container{
@@ -37,7 +37,7 @@
 }
 .filters-container{
   display:grid;
-  grid-template-columns: 170px 170px 170px 170px 170px;
+  grid-template-columns: repeat(5,minmax(150px,170px));
   gap:15px;
   list-style-type:none;
   animation: slide 0.2s ease-in;
@@ -184,5 +184,17 @@
     margin-right: 10px;
     margin-left: 40px;
     grid-template-columns:  1fr
+  }
+  .filters-container{
+    grid-template-columns:repeat(2,130px);
+  }
+  .filter-container{
+    margin-left: 20px;
+  }
+  .filter-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:15px;
   }
 }
