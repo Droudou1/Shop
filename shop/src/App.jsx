@@ -40,18 +40,12 @@ function App(){
   const [currentfilter,setcurrentfilter] = useState('all');
   const [searchterm,setsearchterm] = useState('');
   const [favproducts,setfavproducts] =useState(savedfavproducts !== null ? savedfavproducts : []);
-  const [orders,setorders] = useState([]);
-
 
   useEffect(() => {
     localStorage.setItem('favproducts',JSON.stringify(favproducts));
   },[favproducts]);
-//Old version before Router just remove the router stuff down and that's it
- /* useEffect(() => {
-    // Scroll to the top when page changes
-    window.scrollTo(0, 0);
-  }, [page]);
-  */
+
+  
  function handlefavproducts(newfavproducts){
   setfavproducts(newfavproducts)
  };

@@ -4,7 +4,7 @@ nav{
   width:100vw;
   height:65px;
 }
-.wrapper{
+.nav-wrapper{
   padding:5px 20px;
   display:flex;
   align-items: center;
@@ -65,7 +65,7 @@ nav{
   display:flex;
   list-style-type:none;
   gap:25px;
-  font-size:19px;
+  font-size:1.188rem;
   margin-right:30px;
 }
 .nav-lnk {
@@ -174,7 +174,7 @@ nav{
   border:none;
   margin-left:20px;
   padding:10px;
-  font-size:18px;
+  font-size:1.125rem;
   font-weight:bold;
   background-color:transparent;
   color:white;
@@ -207,8 +207,24 @@ nav{
 }
 
 
-
-
+@media only screen and (max-width:1410px){
+  .middle-section span{
+    font-size:20px;
+  }
+}
+@media only screen and (max-width: 1230px){
+  .login,.signin{
+    display: none;
+  }
+}
+@media only screen and (max-width: 992px){
+  .nav-lnk,.cart-container{
+    display: none;
+  }
+  .middle-section span{
+    font-size:18px;
+  }
+}
 @media only screen and (max-width:380px){
   nav{
     height:50px;

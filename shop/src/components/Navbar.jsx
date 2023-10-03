@@ -1,9 +1,9 @@
 import '../css/Navbar.css';
-import {NavLink,Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 function Navbar(props){
   return(
     <nav>
-      <div className="wrapper">
+      <div className="nav-wrapper">
         <div className="left-section">
           <div className="search-container">
             <input onChange={props.handlesearchtxtchange} type="text" placeholder="search"></input>
